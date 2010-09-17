@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-system('chance/chance.rb --data-url --less ace.light.pig')
+system('chance/chance.rb --data-url --less ace.pig')

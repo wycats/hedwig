@@ -74,7 +74,7 @@ Hedwig.DemoPanel.generateWithView = function(view) {
       init: function() {
         sc_super();
         
-        if (SC.Animatable.enableCSS3DTransforms) {
+        if (SC.platform.supportsCSS3DTransforms) {
           this.back.flip(180, YES);
         } else {
           this.back.set("isVisible", NO);
@@ -91,7 +91,7 @@ Hedwig.DemoPanel.generateWithView = function(view) {
       nowShowingDidChange: function() {
         var ns = this.get("nowShowing");
         if (ns == "front") {
-          if (SC.Animatable.enableCSS3DTransforms) {
+          if (SC.platform.supportsCSS3DTransforms) {
             this.front.flip(0);
             this.back.flip(180);
           } else {
@@ -99,7 +99,7 @@ Hedwig.DemoPanel.generateWithView = function(view) {
             this.back.set("isVisible", NO);
           }
         } else {
-          if (SC.Animatable.enableCSS3DTransforms) {
+          if (SC.platform.supportsCSS3DTransforms) {
             this.front.flip(180);
             this.back.flip(360);
           } else {
@@ -116,9 +116,8 @@ Hedwig.DemoPanel.generateWithView = function(view) {
             "duration": 0.6, timing: SC.Animatable.TRANSITION_EASE_IN_OUT
           }
         },
-        style: {
-          "rotateY": "0deg"
-        },
+
+        layout: { rotateY: 0 },
 
         flip: function(rot, d) {
           if (d) this.disableAnimation();
@@ -166,9 +165,8 @@ Hedwig.DemoPanel.generateWithView = function(view) {
             "duration": 0.5, timing: SC.Animatable.TRANSITION_EASE_IN_OUT
           }
         },
-        style: {
-          "rotateY": "0deg"
-        },
+
+        layout: { rotateY: 0 },
 
         flip: function(rot) {
           this.adjust({

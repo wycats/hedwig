@@ -47,7 +47,7 @@ Hedwig.mainPage = SC.Page.design({
           this.topToolbar.set("masterIsHidden", this.get("masterIsHidden"));
         }.observes("masterIsHidden"),
         
-        topToolbar: SC.ToolbarView.design(SC.Animatable, {
+        topToolbar: SC.ToolbarView.design({
           masterIsHidden: NO,
           
           layout: { top: 0, right: 0, left: 0, height: 44 },
